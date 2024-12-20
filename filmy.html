@@ -1,76 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odtwarzacz Wideo</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      overflow: hidden;
-      align-items: center;
-      height: 100vh;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-    #videoContainer {
-      width: 800px; /* Stała szerokość */
-      height: 600px; /* Stała wysokość */
-      background-color: black; /* Tło wideo */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    video {
-      border: 2px solid white;
-      border-radius: 10px;
-      max-width: 100%; /* Dopasowanie wideo w poziomie */
-      max-height: 100%; /* Dopasowanie wideo w pionie */
-      object-fit: contain;
-    }
-    .button-container {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-    button {
-      background-color: white;
-      color: black;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    button:hover {
-      background-color: #555;
-      color: white;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        /* Styl dla całej strony */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        /* Kontener dla przycisków po lewej stronie */
+        .sidebar {
+            width: 100px; /* szerokość paska bocznego */
+            height: 100%; /* Wysokość na całą stronę */
+            background-color: #333; /* Kolor tła paska bocznego */
+            display: flex;
+            flex-direction: column; /* Układa przyciski w kolumnie */
+            justify-content: top; /* Przyciski będą na górze */
+            padding-top: 20px; /* Odstęp od góry */
+            position: fixed; /* Przykleja pasek boczny do lewej strony */
+            top: 0;
+            left: 0;
+        }
+
+        /* Styl dla każdego przycisku */
+        .sidebar button {
+            background-color: #444; /* Tło przycisków */
+            color: white; /* Kolor tekstu */
+            border: none;
+            padding: 15px;
+            text-align: center;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .sidebar button:hover {
+            background-color: #555; /* Kolor tła przycisku na hover */
+        }
+
+        /* Kontener dla filmu */
+        .video-container {
+            margin-left: 120px; /* Wyrównanie filmu obok paska bocznego */
+            width: calc(100% - 120px); /* Ustala szerokość filmu */
+            height: 100vh; /* Wysokość na całą stronę */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
 </head>
 <body>
-  <div id="videoContainer">
-    <video id="videoPlayer" controls>
-      <source src="videos/default.mp4" type="video/mp4">
-      Twoja przeglądarka nie obsługuje wideo.
-    </video>
-    <div class="button-container">
-      <button onclick="changeVideo('videos/samouczek.mp4')">Samouczek</button>
-      <button onclick="changeVideo('videos/film2.mp4')">Film 2</button>
-      <button onclick="changeVideo('videos/film3.mp4')">Film 3</button>
+    <!-- Pasek boczny z przyciskami -->
+    <div class="sidebar">
+        <button onclick="playVideo('videos/samouczek.mp4')">Film 1</button>
+        <button onclick="playVideo('movie2.mp4')">Film 2</button>
+        <button onclick="playVideo('movie3.mp4')">Film 3</button>
     </div>
-  </div>
 
-  <script>
-    function changeVideo(videoPath) {
-      const videoPlayer = document.getElementById('videoPlayer');
-      videoPlayer.src = videoPath;
-      videoPlayer.play();
-    }
-  </script>
+    <!-- Kontener na wideo -->
+    <div class="video-container">
+        <video id="videoPlayer" controls>
+            <source src="movie1.mp4" type="video/mp4">
+            Twoja przeglądarka nie wspiera elementu wideo.
+        </video>
+    </div>
+
+    <script>
+        // Funkcja zmieniająca wideo na podstawie klikniętego przycisku
+        function playVideo(videoFile) {
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoFile;
+            videoPlayer.play();
+        }
+    </script>
 </body>
 </html>
