@@ -18,7 +18,7 @@
 
         /* Kontener dla przycisków po lewej stronie */
         .sidebar {
-            width: 100px; /* szerokość paska bocznego */
+            width: 200px; /* szerokość paska bocznego */
             height: 100%; /* Wysokość na całą stronę */
             background-color: #333; /* Kolor tła paska bocznego */
             display: flex;
@@ -48,8 +48,8 @@
 
         /* Kontener dla filmu */
         .video-container {
-            margin-left: 120px; /* Wyrównanie filmu obok paska bocznego */
-            width: calc(100% - 120px); /* Ustala szerokość filmu */
+            margin-left: 200px; /* Wyrównanie filmu obok paska bocznego */
+            width: calc(100% - 200px); /* Ustala szerokość filmu */
             height: 100vh; /* Wysokość na całą stronę */
             display: flex;
             justify-content: center;
@@ -67,7 +67,7 @@
 <body>
     <!-- Pasek boczny z przyciskami -->
     <div class="sidebar">
-        <button onclick="playVideo('videos/samouczek.mp4')">Film 1</button>
+        <button onclick="playVideo('videos/samouczek.mp4')">Samouczek</button>
         <button onclick="playVideo('movie2.mp4')">Film 2</button>
         <button onclick="playVideo('movie3.mp4')">Film 3</button>
     </div>
