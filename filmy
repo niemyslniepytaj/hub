@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odtwarzacz Wideo</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    #videoContainer {
+      width: 80%;
+      max-width: 900px;
+    }
+    video {
+      width: 100%;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+    .button-container {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    button {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #555;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="videoContainer">
+    <video id="videoPlayer" controls>
+      <source src="videos/default.mp4" type="video/mp4">
+      Twoja przeglądarka nie obsługuje wideo.
+    </video>
+    <div class="button-container">
+      <button onclick="changeVideo('videos/film1.mp4')">Film 1</button>
+      <button onclick="changeVideo('videos/film2.mp4')">Film 2</button>
+      <button onclick="changeVideo('videos/film3.mp4')">Film 3</button>
+    </div>
+  </div>
+
+  <script>
+    function changeVideo(videoPath) {
+      const videoPlayer = document.getElementById('videoPlayer');
+      videoPlayer.src = videoPath;
+      videoPlayer.play();
+    }
+  </script>
+</body>
+</html>
