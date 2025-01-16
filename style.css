@@ -17,7 +17,6 @@ body, html {
   z-index: 3;
 }
 .w3-bar-item {
-
 }
 
 .logo-img {
@@ -34,6 +33,7 @@ body, html {
   background-size: cover;
   position: relative;
 }
+
 .bgimg::before {
   content: "";
   position: absolute;
