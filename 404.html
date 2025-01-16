@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Pobierz aktualny adres URL
+        const path = window.location.pathname;
+
+        // Zasady przekierowań
+        if (path.includes('/hub/portfolio')) {
+          window.location.replace('/hub/index.html');
+        } else if (path.includes('/hub/portfolio/o_mnie')) {
+          window.location.replace('/hub/about.html');
+        } else if (path.includes('/hub/portfolio/kontakt')) {
+          window.location.replace('/hub/contact.html');
+        } else if (path.includes('/hub/portfolio/projekty')) {
+          window.location.replace('/hub/contact.html');
+        } else {
+          window.location.replace('/hub/index.html'); // Domyślny fallback
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Przekierowanie...</h1>
+</body>
+</html>
