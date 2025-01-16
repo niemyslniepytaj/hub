@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<script>
+  window.history.pushState({},"", "praca_inżynierska");
+</script>
+<head>
+  <title>Rafał Pahl | Praca Inżynierska</title>
+  <meta name="title" content="Rafał Pahl - Portfolio">
+  <meta name="description" content="Początkujący programista. Student 4 roku informatyki. Specjalizacja Inżynieria Systemów Informatycznych">
+  <meta name="keywords" content="wizytówka, żółw, turtle, Rafał, Pahl, Rafał Pahl, student, autoprezentacja, niemyslniepytaj">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="revisit-after" content="1 days">
+  <meta name="language" content="Polish">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.ico" type="image/x-icon">
+  <meta property="og:image" content="3.png">
+  <link rel="canonical" href="https://www.twojadomena.pl">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <meta name="msvalidate.01" content="387ECDCE7F81D585F11CA48F59E65135" />
+</head>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-card" id="myNavbar">
+    <a href="index.html" class="w3-button w3-left">
+      <img src="logo.png" alt="Logo" class="logo-img">
+    </a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="about.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> O mnie</a>
+      <a href="projects.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Projekty</a>
+      <a href="inzynierka.html" class="w3-bar-item w3-button"><i class="fa fa-book"></i> Praca inżynierska</a>
+      <a href="contact.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Kontakt</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button">O mnie</a>
+  <a href="projects.html" onclick="w3_close()" class="w3-bar-item w3-button">Projekty</a>
+  <a href="inzynierka.html" onclick="w3_close()" class="w3-bar-item w3-button">Praca inżynierska</a>
+  <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button">Kontakt</a>
+</nav>
+<div class="bgimg w3-display-container">
+    <div class="sidebar">
+      <button onclick="playVideo('videos/samouczek.mp4')">Samouczek</button>
+      <button onclick="playVideo('videos/motywy.mp4')">Motywy aplikacji</button>
+      <button onclick="playVideo('videos/interakcje.mp4')">Niezależne interakcje</button>
+      <button onclick="playVideo('videos/pow11.mp4')">Powiadomienia normalne i dane żółwia</button>
+      <button onclick="playVideo('videos/pow1.mp4')">Powiadomienia wzmocnione</button>
+      <button onclick="playVideo('videos/pow.mp4')">Powiadomienia dodatkowe</button>
+      <button onclick="playVideo('videos/info.mp4')">Info-żółw</button>
+      <button onclick="playVideo('videos/mini1.mp4')">Minigry: Zwykły Quiz</button>
+      <button onclick="playVideo('videos/teletele.mp4')">Minigry: Teleturniej</button>
+      <button onclick="playVideo('videos/wszystko.mp4')">Minigry: Gra o wszystko</button>
+      <button onclick="playVideo('videos/level.mp4')">Większy poziom = więcej opcji awatara</button>
+      <button onclick="playVideo('videos/awatar1.mp4')">Modyfikacja awatara 1 (dev)</button>
+      <button onclick="playVideo('videos/awatar2.mp4')">Modyfikacja awatara 2 (dev)</button>
+      <button onclick="playVideo('videos/awatar3.mp4')">Modyfikacja awatara 3 (dev)</button>
+    </div>
+   <div class="video-container">
+     <video id="videoPlayer" controls>
+       <source src="videos/samouczek.mp4" type="video/mp4">
+        Twoja przeglądarka nie wspiera elementu wideo.
+     </video>
+   </div>
+</div>
+
+<script>
+  // Funkcja zmieniająca wideo na podstawie klikniętego przycisku
+  function playVideo(videoFile) {
+    var videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.src = videoFile;
+    videoPlayer.play();
+  }
+</script>
+</body>
+</html>
