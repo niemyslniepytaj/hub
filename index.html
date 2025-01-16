@@ -90,8 +90,9 @@
     }
   
     .logo-img {
-      width: auto;  /* Dopasowuje szerokość obrazka do szerokości elementu nadrzędnego */
-      height: auto; /* Utrzymuje proporcje obrazka */
+      width: auto;  /* Automatyczna szerokość */
+      height: 40px; /* Przykładowa wysokość logo, dostosuj w zależności od potrzeb */
+      max-height: 100%; /* Zapewnia, że obrazek nie wykracza poza wysokość elementu nadrzędnego */
       display: block; /* Usuwa dodatkowe przestrzenie wokół obrazka */
     }
 
@@ -101,11 +102,9 @@
 <body>
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <div class="w3-left">
-        <a href="#home" class="w3-bar-item w3-button w3-wide">
-          <img src="logo.png" alt="Logo" class="logo-img">
-        </a>
-    </div>
+    <a href="#home" class="w3-bar-item w3-button w3-wide">
+      <img src="logo.png" alt="Logo" class="logo-img">
+    </a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> O mnie</a>
