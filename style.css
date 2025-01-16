@@ -28,7 +28,7 @@ body, html {
 }
 
 .bgimg {
-  background-image: url('../nowetlo.jpg');
+  background-image: url('nowetlo.jpg');
   min-height: 100%;
   background-position: center;
   background-size: cover;
