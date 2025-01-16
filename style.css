@@ -1,0 +1,129 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+  align-items: center;
+  background-color: inherit;
+}
+.w3-top{
+  background-color: inherit;
+  color: white;
+  z-index: 3;
+}
+.w3-bar-item {
+
+}
+
+.logo-img {
+  width: auto;  /* Automatyczna szerokość */
+  height: 50px; /* Przykładowa wysokość logo, dostosuj w zależności od potrzeb */
+  max-height: 100%; /* Zapewnia, że obrazek nie wykracza poza wysokość elementu nadrzędnego */
+  display: block; /* Usuwa dodatkowe przestrzenie wokół obrazka */
+}
+
+.bgimg {
+  background-image: url('../nowetlo.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.bgimg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Czarne półprzezroczyste tło (zmień na inny kolor według potrzeb) */
+  z-index: 1; /* Upewnij się, że jest poniżej treści */
+}
+
+
+.content {
+  position: absolute;
+  margin-top: 50px;
+
+  top: calc(50% - 50px); /* Wyśrodkowanie w pionie z uwzględnieniem przesunięcia o 50px */
+  left: 50%; /* Wyśrodkowanie w poziomie */
+  transform: translate(-50%, -50%); /* Przesunięcie o połowę szerokości i wysokości */
+  text-align: center;
+  z-index: 2;
+}
+
+.content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1.5em;
+  color: #fff;
+}
+.sidebar {
+  width: 200px; /* szerokość paska bocznego */
+  display: flex;
+  height: calc(100% - 85px);
+  overflow-y: auto;
+  flex-direction: column; /* Układa przyciski w kolumnie */
+  position: fixed; /* Przykleja pasek boczny do lewej strony */
+  top: 85px;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+/* Styl dla każdego przycisku */
+.sidebar button {
+  background-color: rgba(255, 0, 0, 0.7); /* Tło przycisków */
+  color: #ffffff; /* Kolor tekstu */
+  border: none;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sidebar button:hover {
+  background-color: #555; /* Kolor tła przycisku na hover */
+}
+.video-container {
+  margin-left: 200px; /* Wyrównanie filmu obok paska bocznego */
+  width: calc(100% - 200px); /* Ustala szerokość filmu */
+  height: 100vh; /* Wysokość na całą stronę */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  z-index: 3;
+}
+::-webkit-scrollbar {
+  width: 10px; /* Szerokość paska przewijania */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 0, 0, 0.8); /* Czerwony z przezroczystością */
+  border-radius: 6px; /* Zaokrąglone krawędzie */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 0, 0, 1); /* Jaśniejszy czerwony po najechaniu */
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1); /* Przezroczyste tło paska */
+  border-radius: 6px; /* Zaokrąglone krawędzie */
+}
